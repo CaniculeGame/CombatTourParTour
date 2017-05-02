@@ -90,6 +90,10 @@
     <Compile Include="Assets\Battle\Scripts\GameManager.cs" />
     <Compile Include="Assets\Battle\Scripts\Personnage.cs" />
     <Compile Include="Assets\Battle\Scripts\Type.cs" />
+    <Compile Include="Assets\Battle\Scripts\TypeEau.cs" />
+    <Compile Include="Assets\Battle\Scripts\TypeFeu.cs" />
+    <Compile Include="Assets\Battle\Scripts\TypeNormal.cs" />
+    <Compile Include="Assets\Battle\Scripts\TypePlante.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />

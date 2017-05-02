@@ -65,6 +65,12 @@ public class BattleManager : MonoBehaviour
     private Personnage Joueur = null;
     private Personnage Ennemie = null;
 
+    public GameObject JoueurObject;
+    public GameObject EnnemieObject;
+    public float timeMaxAnimation;
+    private float timeFinA = 0;
+    private float timeFinB = 0;
+
     public float vitesseInitManaAtt = 0;
     public float vitesseInitManaCible = 0;
 
@@ -171,14 +177,14 @@ public class BattleManager : MonoBehaviour
         for(int i = 0; i < 4; i++)
         {
             //liste joueur
-            listA.Add(new Attaque(UnityEngine.Random.Range(0.0f,1.0f), UnityEngine.Random.Range(0.0f, 1.0f),"Attaque_"+i,null));
+            listA.Add(new Attaque(UnityEngine.Random.Range(0.0f,1.0f), UnityEngine.Random.Range(0.0f, 1.0f),"Attaque_"+i, new TypeEau(), global::Attaque.E_TypeAttaque.ATTAQUER,1,2 ));
             //liste ennemie
-            listB.Add(new Attaque(UnityEngine.Random.Range(0.0f, 1.0f), UnityEngine.Random.Range(0.0f, 1.0f), "Attaque_" + i, null));
+            listB.Add(new Attaque(UnityEngine.Random.Range(0.0f, 1.0f), UnityEngine.Random.Range(0.0f, 1.0f), "Attaque_" + i, new TypeEau(), global::Attaque.E_TypeAttaque.ATTAQUER,2,3));
         }
 
 
-        Personnage A = new Personnage(0.68f, 0.80f, 0.8f, 0.065f, 1.0f, 1.0f, new Type(), listA);
-        Personnage B = new Personnage(0.75f, 0.40f, 1.40f, 0.05f, 1.0f, 1.0f, new Type(), listB);
+        Personnage A = new Personnage(0.68f, 0.80f, 0.25f,0.8f, 0.065f, 1.0f, 1.0f, new TypeEau(), listA);
+        Personnage B = new Personnage(0.75f, 0.40f, 0.30f,1.40f, 0.05f, 1.0f, 1.0f, new TypeFeu(), listB);
 
         Configurer(A, B);
     }
@@ -225,15 +231,15 @@ public class BattleManager : MonoBehaviour
         Joueur = joueur;
         Ennemie = ennemie;
 
-        AttButton0 = new ButtonBattle(Joueur.AttaquesList[0].Mp, Joueur.AttaquesList[0].Power, Joueur.AttaquesList[0].Intitule, Joueur.AttaquesList[0].TypeDAttaque);
-        AttButton1 = new ButtonBattle(Joueur.AttaquesList[1].Mp, Joueur.AttaquesList[1].Power, Joueur.AttaquesList[1].Intitule, Joueur.AttaquesList[1].TypeDAttaque);
-        AttButton2 = new ButtonBattle(Joueur.AttaquesList[2].Mp, Joueur.AttaquesList[2].Power, Joueur.AttaquesList[2].Intitule, Joueur.AttaquesList[2].TypeDAttaque);
-        AttButton3 = new ButtonBattle(Joueur.AttaquesList[3].Mp, Joueur.AttaquesList[3].Power, Joueur.AttaquesList[3].Intitule, Joueur.AttaquesList[3].TypeDAttaque);
+        AttButton0 = new ButtonBattle();
+        AttButton1 = new ButtonBattle();
+        AttButton2 = new ButtonBattle();
+        AttButton3 = new ButtonBattle();
 
-        SetText(Joueur.AttaquesList[0].Intitule + "  " + (AttButton0.Mana * 100.0f).ToString("0") + " Mp", E_TextEnum.ATT0);
-        SetText(Joueur.AttaquesList[1].Intitule + "  " + (AttButton1.Mana * 100.0f).ToString("0") + " Mp", E_TextEnum.ATT1);
-        SetText(Joueur.AttaquesList[2].Intitule + "  " + (AttButton2.Mana * 100.0f).ToString("0") + " Mp", E_TextEnum.ATT2);
-        SetText(Joueur.AttaquesList[3].Intitule + "  " + (AttButton3.Mana * 100.0f).ToString("0") + " Mp", E_TextEnum.ATT3);
+        SetText(Joueur.AttaquesList[0].Intitule + "  " + (Joueur.AttaquesList[0].Mp * 100.0f).ToString("0") + " Mp", E_TextEnum.ATT0);
+        SetText(Joueur.AttaquesList[1].Intitule + "  " + (Joueur.AttaquesList[1].Mp * 100.0f).ToString("0") + " Mp", E_TextEnum.ATT1);
+        SetText(Joueur.AttaquesList[2].Intitule + "  " + (Joueur.AttaquesList[2].Mp * 100.0f).ToString("0") + " Mp", E_TextEnum.ATT2);
+        SetText(Joueur.AttaquesList[3].Intitule + "  " + (Joueur.AttaquesList[3].Mp * 100.0f).ToString("0") + " Mp", E_TextEnum.ATT3);
 
 
         Joueur.Mana = 0.0f;
@@ -266,8 +272,6 @@ public class BattleManager : MonoBehaviour
             UseMana(val, E_ManaEnum.CIBLE);
         }
 
-
-
         //Attribution du Mana
         Ennemie.Mana += (Ennemie.Vitesse * Time.deltaTime);
         if (Ennemie.Mana >= Ennemie.ManaBase)
@@ -293,13 +297,20 @@ public class BattleManager : MonoBehaviour
         }
 
 
-
         //Maj des valeurs d'affichage
         SetText((Ennemie.Mana  * 100).ToString("0") + " / " + Ennemie.ManaBase * 100 + " MP", E_TextEnum.MANACIBLE);
         SetText((Ennemie.Pv * 100 ).ToString("0") + " / "+ Ennemie.PvBase * 100 + " PV", E_TextEnum.HPCIBLE);
 
         SetText((Joueur.Pv * 100).ToString("0") + " / " + Joueur.PvBase * 100 + " PV", E_TextEnum.HPATT);
         SetText((Joueur.Mana * 100).ToString("0") + " / " + Joueur.ManaBase * 100 + " MP", E_TextEnum.MANAATT);
+
+
+        //maj anim
+       if (timeFinA < Time.time)
+        { JoueurObject.GetComponent<Animator>().SetInteger("numeroAnimation", 0); timeFinA = 0; }
+
+        if (timeFinB < Time.time)
+        { EnnemieObject.GetComponent<Animator>().SetInteger("numeroAnimation", 0); timeFinB = 0; }
 
 
         if (Ennemie.Pv <= 0.0f)
@@ -350,6 +361,7 @@ public class BattleManager : MonoBehaviour
         }
         
 
+
     }
 
 
@@ -393,30 +405,63 @@ public class BattleManager : MonoBehaviour
     public void Attaque(int flg)
     {
         float vie = HealthBarCible.fillAmount;
+        int animA = 0;
+        int animB = 0;
 
         if (((E_ButtonFlgEnum)flg & E_ButtonFlgEnum.ATT0) != 0)
         {
-            if (AttButton0.Execute(Ennemie, Joueur))
-                UseMana(AttButton0.Mana, E_ManaEnum.ATTQE);
+            if (AttButton0.Execute(ref Ennemie, ref Joueur, 0))
+            {
+                UseMana(Joueur.AttaquesList[0].Mp, E_ManaEnum.ATTQE);
+
+                //maj des animation
+                animA =  Joueur.AttaquesList[0].NumeroAnimationAttaquant;
+                animB =  Joueur.AttaquesList[0].NumeroAnimationEnnemie;
+            }
         }
 
         else if (((E_ButtonFlgEnum)flg & E_ButtonFlgEnum.ATT1) != 0)
         {
-            if (AttButton1.Execute(Ennemie, Joueur))
-                UseMana(AttButton1.Mana, E_ManaEnum.ATTQE);
+            if (AttButton1.Execute(ref Ennemie, ref Joueur, 1))
+            {
+                UseMana(Joueur.AttaquesList[1].Mp, E_ManaEnum.ATTQE);
+                //maj des animation
+                animA = Joueur.AttaquesList[1].NumeroAnimationAttaquant;
+                animB = Joueur.AttaquesList[1].NumeroAnimationEnnemie;
+            }
         }
 
         else if (((E_ButtonFlgEnum)flg & E_ButtonFlgEnum.ATT2) != 0)
         {
-            if (AttButton2.Execute(Ennemie, Joueur))
-                UseMana(AttButton2.Mana, E_ManaEnum.ATTQE);
+            if (AttButton2.Execute(ref Ennemie, ref Joueur, 2))
+            {
+                UseMana(Joueur.AttaquesList[2].Mp, E_ManaEnum.ATTQE);
+                //maj des animation
+                animA = Joueur.AttaquesList[2].NumeroAnimationAttaquant;
+                animB = Joueur.AttaquesList[2].NumeroAnimationEnnemie;
+            }
         }
 
         else if (((E_ButtonFlgEnum)flg & E_ButtonFlgEnum.ATT3) != 0)
         {
-            if (AttButton3.Execute(Ennemie, Joueur))
-                UseMana(AttButton3.Mana, E_ManaEnum.ATTQE);
+            if (AttButton3.Execute(ref Ennemie, ref Joueur, 3))
+            {
+                UseMana(Joueur.AttaquesList[3].Mp, E_ManaEnum.ATTQE);
+                //maj des animation
+                animA = Joueur.AttaquesList[3].NumeroAnimationAttaquant;
+                animB = Joueur.AttaquesList[3].NumeroAnimationEnnemie;
+            }
         }
+
+        //maj animation
+        JoueurObject.GetComponent<Animator>().SetInteger("numeroAnimation", 0); // on repasse toujours par l etat idle qui est etat de transition
+        JoueurObject.GetComponent<Animator>().SetInteger("numeroAnimation", animA);
+
+        EnnemieObject.GetComponent<Animator>().SetInteger("numeroAnimation", 0);
+        EnnemieObject.GetComponent<Animator>().SetInteger("numeroAnimation", animB);
+
+        timeFinA = timeMaxAnimation + Time.time;
+        timeFinB = timeMaxAnimation + Time.time;
 
         HealthBarCible.fillAmount = Ennemie.Pv / Ennemie.PvBase;
         if (Ennemie.Pv <= 0)
