@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombatTourParTour.Plugins", "CombatTourParTour.Plugins.csproj", "{C191D3B6-9118-5B50-88CF-9EFCC9EA3CC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombatTourParTour", "CombatTourParTour.csproj", "{49FAF9AA-29AF-0677-99FF-E711BFEA0F60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombatTourParTour.Editor.Plugins", "CombatTourParTour.Editor.Plugins.csproj", "{3695B50F-4578-9F16-7AED-187C1BB1F912}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C191D3B6-9118-5B50-88CF-9EFCC9EA3CC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C191D3B6-9118-5B50-88CF-9EFCC9EA3CC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C191D3B6-9118-5B50-88CF-9EFCC9EA3CC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C191D3B6-9118-5B50-88CF-9EFCC9EA3CC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49FAF9AA-29AF-0677-99FF-E711BFEA0F60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49FAF9AA-29AF-0677-99FF-E711BFEA0F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49FAF9AA-29AF-0677-99FF-E711BFEA0F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49FAF9AA-29AF-0677-99FF-E711BFEA0F60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3695B50F-4578-9F16-7AED-187C1BB1F912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3695B50F-4578-9F16-7AED-187C1BB1F912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3695B50F-4578-9F16-7AED-187C1BB1F912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3695B50F-4578-9F16-7AED-187C1BB1F912}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
