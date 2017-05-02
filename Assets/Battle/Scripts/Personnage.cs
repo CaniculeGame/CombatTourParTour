@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Personnage : MonoBehaviour
+public class Personnage
 {
+    private List<Attaque> ListeDAttaque_ = null;
+
     private Type type_ = null;
     private float pv_ = 0.0f;
     private float pvDefaut_ = 0.0f;
@@ -18,8 +20,10 @@ public class Personnage : MonoBehaviour
     private float precision_ = 0.0f;
     private float precisionDefaut_ = 0.0f;
 
-    public Personnage(float pv, float def, float mana, float vitesse, float esquive, float precision, Type type)
+    public Personnage(float pv, float def, float mana, float vitesse, float esquive, float precision, Type type, List<Attaque> attaques)
     {
+
+        ListeDAttaque_ = attaques;
 
         if (pv <= 0)
             pv = 1.0f;
@@ -73,5 +77,6 @@ public class Personnage : MonoBehaviour
     public float PrecisionBase { get { return precisionDefaut_; } set { precision_ = value; } }
 
     public Type Type { get { return type_; } set { type_ = value; } }
+    public List<Attaque> AttaquesList { get { return ListeDAttaque_; } set { ListeDAttaque_ = value; } }
 
 }

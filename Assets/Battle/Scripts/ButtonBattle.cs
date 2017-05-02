@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonBattle : MonoBehaviour
+public class ButtonBattle 
 {
     public enum E_TypeAttaque
     {
@@ -34,8 +34,8 @@ public class ButtonBattle : MonoBehaviour
         useMp_ = useMp;
         type_  = type;
         txt_   = nom;
-
     }
+
 
     public bool Execute( Personnage Enemie, Personnage joueur)
     {
@@ -47,7 +47,7 @@ public class ButtonBattle : MonoBehaviour
             res = true;
             
             //faire calcul en fonction de l'enemie
-            Enemie.Pv -= (0.8f);
+            Enemie.Pv -= power_;
         }
 
         Debug.Log(txt_+"  "+res);

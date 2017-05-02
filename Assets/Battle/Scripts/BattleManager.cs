@@ -161,38 +161,96 @@ public class BattleManager : MonoBehaviour
 
 
     // Use this for initialization
+    // main
     void Start()
     {
+        List<Attaque> listA = new List<Attaque>();
+        List<Attaque> listB = new List<Attaque>();
+
+        
+        for(int i = 0; i < 4; i++)
+        {
+            //liste joueur
+            listA.Add(new Attaque(UnityEngine.Random.Range(0.0f,1.0f), UnityEngine.Random.Range(0.0f, 1.0f),"Attaque_"+i,null));
+            //liste ennemie
+            listB.Add(new Attaque(UnityEngine.Random.Range(0.0f, 1.0f), UnityEngine.Random.Range(0.0f, 1.0f), "Attaque_" + i, null));
+        }
+
+
+        Personnage A = new Personnage(0.68f, 0.80f, 0.8f, 0.065f, 1.0f, 1.0f, new Type(), listA);
+        Personnage B = new Personnage(0.75f, 0.40f, 1.40f, 0.05f, 1.0f, 1.0f, new Type(), listB);
+
+        Configurer(A, B);
+    }
+
+   /* public void Configurer()
+    {
         //initialisation des boutons
-        Joueur = new Personnage(0.68f, 0.80f, 0.8f, 0.065f, 1.0f, 1.0f, new Type());
-        Ennemie = new Personnage(0.75f, 0.40f, 1.40f, 0.05f, 1.0f, 1.0f, new Type());
+        Joueur = new Personnage(0.68f, 0.80f, 0.8f, 0.065f, 1.0f, 1.0f, new Type(),null);
+        Ennemie = new Personnage(0.75f, 0.40f, 1.40f, 0.05f, 1.0f, 1.0f, new Type(),null);
 
         AttButton0 = new ButtonBattle(0.5f, 5, "Liane", null);
         AttButton1 = new ButtonBattle(0.8f, 10, "Bulle d'eau", null);
         AttButton2 = new ButtonBattle(0.2f, 0.5f, "Etincelle", null);
         AttButton3 = new ButtonBattle(0.3f, 4, "Canon à eau", null);
 
-        SetText("Liane :" + AttButton0.Mana * 100.0f + " Mp", E_TextEnum.ATT0);
-        SetText("Bulle d'eau:" + AttButton1.Mana * 100.0f + " Mp", E_TextEnum.ATT1);
-        SetText("Etincelle:" + AttButton2.Mana * 100.0f + " Mp", E_TextEnum.ATT2);
-        SetText("Canon à eau:" + AttButton3.Mana * 100.0f + " Mp", E_TextEnum.ATT3);
+        SetText("Liane   " + AttButton0.Mana * 100.0f + " Mp", E_TextEnum.ATT0);
+        SetText("Bulle d'eau   " + AttButton1.Mana * 100.0f + " Mp", E_TextEnum.ATT1);
+        SetText("Etincelle   " + AttButton2.Mana * 100.0f + " Mp", E_TextEnum.ATT2);
+        SetText("Canon à eau   " + AttButton3.Mana * 100.0f + " Mp", E_TextEnum.ATT3);
 
 
         Joueur.Mana = 0.0f;
         Ennemie.Mana = 0.0f;
 
         HealhBarAtt.fillAmount = Joueur.Pv / Joueur.PvBase;
-        ManaBarAtt.fillAmount  = Joueur.Mana / Joueur.ManaBase;
+        ManaBarAtt.fillAmount = Joueur.Mana / Joueur.ManaBase;
 
         HealthBarCible.fillAmount = Ennemie.Pv / Ennemie.PvBase;
-        ManaBarCible.fillAmount   = Ennemie.Mana / Ennemie.ManaBase;
+        ManaBarCible.fillAmount = Ennemie.Mana / Ennemie.ManaBase;
 
 
         // attention il y a que ici qu'on multiplie par 100
         SetText((Ennemie.ManaBase * 100) + " / " + Ennemie.ManaBase * 100 + " MP", E_TextEnum.MANACIBLE);
         SetText((Ennemie.PvBase * 100) + " / " + Ennemie.PvBase * 100 + " PV", E_TextEnum.HPCIBLE);
 
-        SetText((Joueur.PvBase * 100) + " / " + Joueur.PvBase * 100 +  " PV", E_TextEnum.HPATT);
+        SetText((Joueur.PvBase * 100) + " / " + Joueur.PvBase * 100 + " PV", E_TextEnum.HPATT);
+        SetText((Joueur.ManaBase * 100) + " / " + Joueur.ManaBase * 100 + " MP", E_TextEnum.MANAATT);
+    }
+    */
+
+    public void Configurer(Personnage joueur,Personnage ennemie)
+    {
+        //initialisation des boutons
+        Joueur = joueur;
+        Ennemie = ennemie;
+
+        AttButton0 = new ButtonBattle(Joueur.AttaquesList[0].Mp, Joueur.AttaquesList[0].Power, Joueur.AttaquesList[0].Intitule, Joueur.AttaquesList[0].TypeDAttaque);
+        AttButton1 = new ButtonBattle(Joueur.AttaquesList[1].Mp, Joueur.AttaquesList[1].Power, Joueur.AttaquesList[1].Intitule, Joueur.AttaquesList[1].TypeDAttaque);
+        AttButton2 = new ButtonBattle(Joueur.AttaquesList[2].Mp, Joueur.AttaquesList[2].Power, Joueur.AttaquesList[2].Intitule, Joueur.AttaquesList[2].TypeDAttaque);
+        AttButton3 = new ButtonBattle(Joueur.AttaquesList[3].Mp, Joueur.AttaquesList[3].Power, Joueur.AttaquesList[3].Intitule, Joueur.AttaquesList[3].TypeDAttaque);
+
+        SetText(Joueur.AttaquesList[0].Intitule + "  " + (AttButton0.Mana * 100.0f).ToString("0") + " Mp", E_TextEnum.ATT0);
+        SetText(Joueur.AttaquesList[1].Intitule + "  " + (AttButton1.Mana * 100.0f).ToString("0") + " Mp", E_TextEnum.ATT1);
+        SetText(Joueur.AttaquesList[2].Intitule + "  " + (AttButton2.Mana * 100.0f).ToString("0") + " Mp", E_TextEnum.ATT2);
+        SetText(Joueur.AttaquesList[3].Intitule + "  " + (AttButton3.Mana * 100.0f).ToString("0") + " Mp", E_TextEnum.ATT3);
+
+
+        Joueur.Mana = 0.0f;
+        Ennemie.Mana = 0.0f;
+
+        HealhBarAtt.fillAmount = Joueur.Pv / Joueur.PvBase;
+        ManaBarAtt.fillAmount = Joueur.Mana / Joueur.ManaBase;
+
+        HealthBarCible.fillAmount = Ennemie.Pv / Ennemie.PvBase;
+        ManaBarCible.fillAmount = Ennemie.Mana / Ennemie.ManaBase;
+
+
+        // attention il y a que ici qu'on multiplie par 100
+        SetText((Ennemie.ManaBase * 100) + " / " + Ennemie.ManaBase * 100 + " MP", E_TextEnum.MANACIBLE);
+        SetText((Ennemie.PvBase * 100) + " / " + Ennemie.PvBase * 100 + " PV", E_TextEnum.HPCIBLE);
+
+        SetText((Joueur.PvBase * 100) + " / " + Joueur.PvBase * 100 + " PV", E_TextEnum.HPATT);
         SetText((Joueur.ManaBase * 100) + " / " + Joueur.ManaBase * 100 + " MP", E_TextEnum.MANAATT);
     }
 
