@@ -84,18 +84,26 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Battle\Scripts\Attaque.cs" />
-    <Compile Include="Assets\Battle\Scripts\BattleManager.cs" />
-    <Compile Include="Assets\Battle\Scripts\ButtonBattle.cs" />
-    <Compile Include="Assets\Battle\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Battle\Scripts\Personnage.cs" />
-    <Compile Include="Assets\Battle\Scripts\Type.cs" />
-    <Compile Include="Assets\Battle\Scripts\TypeEau.cs" />
-    <Compile Include="Assets\Battle\Scripts\TypeFeu.cs" />
-    <Compile Include="Assets\Battle\Scripts\TypeNormal.cs" />
-    <Compile Include="Assets\Battle\Scripts\TypePlante.cs" />
+    <Compile Include="Assets\Resources\Battle\Scripts\Attaque.cs" />
+    <Compile Include="Assets\Resources\Battle\Scripts\BattleManager.cs" />
+    <Compile Include="Assets\Resources\Battle\Scripts\ButtonBattle.cs" />
+    <Compile Include="Assets\Resources\Battle\Scripts\Type.cs" />
+    <Compile Include="Assets\Resources\Battle\Scripts\TypeEau.cs" />
+    <Compile Include="Assets\Resources\Battle\Scripts\TypeFeu.cs" />
+    <Compile Include="Assets\Resources\Battle\Scripts\TypeNormal.cs" />
+    <Compile Include="Assets\Resources\Battle\Scripts\TypePlante.cs" />
+    <Compile Include="Assets\Resources\FichePerso\ModificationPersonnageManager.cs" />
+    <Compile Include="Assets\Resources\FichePerso\Personnage.cs" />
+    <Compile Include="Assets\Resources\FichePerso\SampleButton.cs" />
+    <Compile Include="Assets\Resources\FichePerso\ScrollList.cs" />
+    <Compile Include="Assets\Resources\FichePerso\SimpleObjectPool.cs" />
+    <Compile Include="Assets\Resources\GameManagerBatlle.cs" />
+    <Compile Include="Assets\UtilitaireScripts\DictionnaireLang.cs" />
+    <Compile Include="Assets\UtilitaireScripts\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Resources\Dictionnaire\language.xml" />
+    <None Include="Assets\Resources\FichePerso\Text\attaqueList.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

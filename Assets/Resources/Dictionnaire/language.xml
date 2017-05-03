@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<document>
+  
+  <valeur name="listeAtqB">
+    <fr>Attaques choisies</fr>
+    <en>Attaques choisies</en>
+    <us>Attaques choisies</us>
+    <be>Attaques choisies</be>
+  </valeur>
+
+  <valeur name="listeAtqA">
+    <fr>Attaques disponibles</fr>
+    <en>Attaques disponibles</en>
+    <us>Attaques disponibles</us>
+    <be>Attaques disponibles</be>
+  </valeur>
+  
+   <valeur name="attribut">
+    <fr>Attribut joueur</fr>
+    <en>Attribut joueur</en>
+    <us>Attribut joueur</us>
+    <be>Attribut joueur</be>
+  </valeur>
+  
+    <valeur name="continuer">
+    <fr>Continuer</fr>
+    <en>Continue</en>
+    <us>Continue</us>
+    <be>Continuer</be>
+  </valeur>
+  
+   <valeur name="main_titre_fiche_perso">
+    <fr>Fiche personnage</fr>
+    <en>Fiche personnage</en>
+    <us>Fiche personnage</us>
+    <be>Fiche personnage</be>
+  </valeur>
+  
+   <valeur name="sub_titre_fiche_perso">
+    <fr>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada, tortor id luctus fringilla, nisi arcu aliquam ligula, eget porta orci lacus nec justo. </fr>
+    <en>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada, tortor id luctus fringilla, nisi arcu aliquam ligula, eget porta orci lacus nec justo. </en>
+    <us>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada, tortor id luctus fringilla, nisi arcu aliquam ligula, eget porta orci lacus nec justo. </us>
+    <be>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada, tortor id luctus fringilla, nisi arcu aliquam ligula, eget porta orci lacus nec justo. </be>
+  </valeur>
+  
+  <valeur name="explain">
+    <fr>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit ultricies lorem vel porttitor. Sed rutrum vehicula accumsan. Vestibulum in est non lectus vulputate eleifend. Aenean viverra feugiat lorem, nec suscipit nulla interdum ac. Donec ullamcorper tortor eu dolor condimentum cursus. Nulla vitae urna dolor. Nam ullamcorper quam ac sapien imperdiet, nec blandit metus volutpat. Donec viverra semper erat eu tempus. Vestibulum lobortis pharetra libero sit amet mattis. Quisque sed condimentum orci, vitae scelerisque est. Etiam sed sodales neque. Aliquam metus ipsum, porttitor a pulvinar id, gravida sit amet felis. Praesent vitae consectetur ex. Duis lacus ante, ullamcorper ut dui id, malesuada aliquam nulla. </fr>
+    <en>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit ultricies lorem vel porttitor. Sed rutrum vehicula accumsan. Vestibulum in est non lectus vulputate eleifend. Aenean viverra feugiat lorem, nec suscipit nulla interdum ac. Donec ullamcorper tortor eu dolor condimentum cursus. Nulla vitae urna dolor. Nam ullamcorper quam ac sapien imperdiet, nec blandit metus volutpat. Donec viverra semper erat eu tempus. Vestibulum lobortis pharetra libero sit amet mattis. Quisque sed condimentum orci, vitae scelerisque est. Etiam sed sodales neque. Aliquam metus ipsum, porttitor a pulvinar id, gravida sit amet felis. Praesent vitae consectetur ex. Duis lacus ante, ullamcorper ut dui id, malesuada aliquam nulla. </en>
+    <us>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit ultricies lorem vel porttitor. Sed rutrum vehicula accumsan. Vestibulum in est non lectus vulputate eleifend. Aenean viverra feugiat lorem, nec suscipit nulla interdum ac. Donec ullamcorper tortor eu dolor condimentum cursus. Nulla vitae urna dolor. Nam ullamcorper quam ac sapien imperdiet, nec blandit metus volutpat. Donec viverra semper erat eu tempus. Vestibulum lobortis pharetra libero sit amet mattis. Quisque sed condimentum orci, vitae scelerisque est. Etiam sed sodales neque. Aliquam metus ipsum, porttitor a pulvinar id, gravida sit amet felis. Praesent vitae consectetur ex. Duis lacus ante, ullamcorper ut dui id, malesuada aliquam nulla. </us>
+    <be>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit ultricies lorem vel porttitor. Sed rutrum vehicula accumsan. Vestibulum in est non lectus vulputate eleifend. Aenean viverra feugiat lorem, nec suscipit nulla interdum ac. Donec ullamcorper tortor eu dolor condimentum cursus. Nulla vitae urna dolor. Nam ullamcorper quam ac sapien imperdiet, nec blandit metus volutpat. Donec viverra semper erat eu tempus. Vestibulum lobortis pharetra libero sit amet mattis. Quisque sed condimentum orci, vitae scelerisque est. Etiam sed sodales neque. Aliquam metus ipsum, porttitor a pulvinar id, gravida sit amet felis. Praesent vitae consectetur ex. Duis lacus ante, ullamcorper ut dui id, malesuada aliquam nulla. </be>
+  </valeur>
+  
+
+
+</document>
