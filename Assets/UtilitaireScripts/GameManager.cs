@@ -82,9 +82,8 @@ public class GameManager : MonoBehaviour
             if (stateActu == E_StateEnum.CREATION)
             {
                 creationPerso.enabled = true;
-                creationPerso.Demarrer();
-
                 battle.Eteindre();
+                creationPerso.Demarrer();
                 battle.enabled = false;
             }
 

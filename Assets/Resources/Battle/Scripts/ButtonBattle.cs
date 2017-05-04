@@ -20,24 +20,27 @@ public class ButtonBattle
     {
         bool res = false;
 
-        if (((E_TypeAttaque)joueur.AttaquesList[numeroAttaque].CategorieDAttaque & E_TypeAttaque.ATTAQUER) != 0)
-            res = Attaquer(ref Enemie, ref joueur,numeroAttaque);
+        if (joueur.Mana >= joueur.AttaquesList[numeroAttaque].Mp)
+        {
 
-        if (((E_TypeAttaque)joueur.AttaquesList[numeroAttaque].CategorieDAttaque & E_TypeAttaque.DEF) != 0)
-            res = ChangerDefenseEnnemie(ref Enemie, numeroAttaque);
+            if (((E_TypeAttaque)joueur.AttaquesList[numeroAttaque].CategorieDAttaque & E_TypeAttaque.ATTAQUER) != 0)
+                res = Attaquer(ref Enemie, ref joueur, numeroAttaque);
 
-        if (((E_TypeAttaque)joueur.AttaquesList[numeroAttaque].CategorieDAttaque & E_TypeAttaque.ESQUIVE) != 0)
-            res = ChangeEsquiveEnnemie(ref Enemie, numeroAttaque);
+            if (((E_TypeAttaque)joueur.AttaquesList[numeroAttaque].CategorieDAttaque & E_TypeAttaque.DEF) != 0)
+                res = ChangerDefenseEnnemie(ref Enemie, numeroAttaque);
 
-        if (((E_TypeAttaque)joueur.AttaquesList[numeroAttaque].CategorieDAttaque & E_TypeAttaque.PRECISION) != 0)
-            res = ChangerPrecisionEnnemie(ref Enemie, numeroAttaque);
+            if (((E_TypeAttaque)joueur.AttaquesList[numeroAttaque].CategorieDAttaque & E_TypeAttaque.ESQUIVE) != 0)
+                res = ChangeEsquiveEnnemie(ref Enemie, numeroAttaque);
 
-        if (((E_TypeAttaque)joueur.AttaquesList[numeroAttaque].CategorieDAttaque & E_TypeAttaque.SOIN) != 0)
-            res = Soigner(ref joueur, numeroAttaque);
+            if (((E_TypeAttaque)joueur.AttaquesList[numeroAttaque].CategorieDAttaque & E_TypeAttaque.PRECISION) != 0)
+                res = ChangerPrecisionEnnemie(ref Enemie, numeroAttaque);
 
-        if (((E_TypeAttaque)joueur.AttaquesList[numeroAttaque].CategorieDAttaque & E_TypeAttaque.CHANGEATT) != 0)
-            res = ChangeAttaqueEnnemie(ref Enemie, numeroAttaque);
+            if (((E_TypeAttaque)joueur.AttaquesList[numeroAttaque].CategorieDAttaque & E_TypeAttaque.SOIN) != 0)
+                res = Soigner(ref joueur, numeroAttaque);
 
+            if (((E_TypeAttaque)joueur.AttaquesList[numeroAttaque].CategorieDAttaque & E_TypeAttaque.CHANGEATT) != 0)
+                res = ChangeAttaqueEnnemie(ref Enemie, numeroAttaque);
+        }
 
         Debug.Log((E_TypeAttaque)joueur.AttaquesList[numeroAttaque].CategorieDAttaque + "  " + res);
         return res;
@@ -50,6 +53,7 @@ public class ButtonBattle
     {
         bool res = false;
 
+        Debug.Log(joueur.Mana +"  "+ joueur.AttaquesList[numAtt].Mp);
         if (joueur.Mana >= joueur.AttaquesList[numAtt].Mp)
         {
             res = true;
