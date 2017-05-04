@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public BattleManager battle;
     public ModificationPersonnageManager creationPerso;
+    public GameObject personnageA;
+    public GameObject personnageB;
 
     public enum E_StateEnum
     {
@@ -19,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     //gestion du temps pour la surveillance
     private float timeprecedent = 0;
-    public  float timeAttente = 0;
+    public float timeAttente = 0;
 
 
     private Type convertirStringToType(string intitule)
@@ -70,6 +72,8 @@ public class GameManager : MonoBehaviour
         creationPerso.enabled = true;
         battle.enabled = false;
 
+        personnageA.GetComponent<Personnage>().SetType(new TypeFeu());
+        personnageB.GetComponent<Personnage>().SetType(new TypeEau());
         creationPerso.Configurer();
     }
 
@@ -81,6 +85,7 @@ public class GameManager : MonoBehaviour
 
             if (stateActu == E_StateEnum.CREATION)
             {
+
                 creationPerso.enabled = true;
                 battle.Eteindre();
                 creationPerso.Demarrer();
@@ -97,7 +102,7 @@ public class GameManager : MonoBehaviour
                 List<Attaque> listA = new List<Attaque>();
                 List<Attaque> listB = new List<Attaque>();
 
-                //creation de la liste via les element dans la scrolllist
+                //creation de la liste via les elements dans la scrolllist
                 List<Item> lst = creationPerso.getListB();
                 foreach (Item i in lst)
                 {
@@ -114,8 +119,14 @@ public class GameManager : MonoBehaviour
                     listB.Add(new Attaque(UnityEngine.Random.Range(0.0f, 1.0f), UnityEngine.Random.Range(0.0f, 1.0f), "Attaque_" + i, new TypeEau(), global::Attaque.E_TypeAttaque.ATTAQUER, 2, 3));
                 }
 
-                Personnage A = new Personnage(0.68f, 0.80f, 0.25f, 0.8f, 0.065f, 1.0f, 1.0f, new TypeEau(), listA);
-                Personnage B = new Personnage(0.75f, 0.40f, 0.30f, 1.40f, 0.05f, 1.0f, 1.0f, new TypeFeu(), listB);
+
+                Personnage A = personnageA.GetComponent<Personnage>(); 
+                Personnage B = personnageB.GetComponent<Personnage>();
+                A.InitPersonnage();
+                A.AttaquesList = listA;
+
+                B.InitPersonnage();
+                B.AttaquesList = listB;
                 battle.Configurer(A, B);
 
                 creationPerso.enabled = false;

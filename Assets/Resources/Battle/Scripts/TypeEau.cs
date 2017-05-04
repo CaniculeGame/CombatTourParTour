@@ -13,6 +13,8 @@ public class TypeEau : Type
         this.Tableau[(int)E_TypeEnum.NORMAL] = 1.0f;
         this.Tableau[(int)E_TypeEnum.PLANTE] = 0.5f;
 
+        this.Genre = E_TypeEnum.EAU;
+
     }
 
 

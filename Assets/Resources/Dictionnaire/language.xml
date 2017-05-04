@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <document>
-  
+
   <valeur name="listeAtqB">
     <fr>Attaques choisies</fr>
     <en>Attaques choisies</en>
@@ -14,42 +14,102 @@
     <us>Attaques disponibles</us>
     <be>Attaques disponibles</be>
   </valeur>
-  
-   <valeur name="attribut">
+
+  <valeur name="attribut">
     <fr>Attribut joueur</fr>
     <en>Attribut joueur</en>
     <us>Attribut joueur</us>
     <be>Attribut joueur</be>
   </valeur>
-  
-    <valeur name="continuer">
+
+  <valeur name="continuer">
     <fr>Continuer</fr>
     <en>Continue</en>
     <us>Continue</us>
     <be>Continuer</be>
   </valeur>
-  
-   <valeur name="main_titre_fiche_perso">
+
+  <valeur name="main_titre_fiche_perso">
     <fr>Fiche personnage</fr>
     <en>Fiche personnage</en>
     <us>Fiche personnage</us>
     <be>Fiche personnage</be>
   </valeur>
-  
-   <valeur name="sub_titre_fiche_perso">
+
+
+  <valeur name="pv">
+    <fr>PV </fr>
+    <en>LP </en>
+    <us>LP </us>
+    <be>PV </be>
+  </valeur>
+
+  <valeur name="mp">
+    <fr>PM </fr>
+    <en>MP </en>
+    <us>MP </us>
+    <be>PM </be>
+  </valeur>
+
+  <valeur name="force">
+    <fr>FOR </fr>
+    <en>STR </en>
+    <us>STR </us>
+    <be>FOR </be>
+  </valeur>
+
+  <valeur name="vitesse">
+    <fr>VIT </fr>
+    <en>SPE </en>
+    <us>SPE </us>
+    <be>VIT </be>
+  </valeur>
+
+  <valeur name="precision">
+    <fr>PRE </fr>
+    <en>PRE </en>
+    <us>PRE </us>
+    <be>PRE </be>
+  </valeur>
+
+  <valeur name="esquive">
+    <fr>ESQ </fr>
+    <en>ESQ </en>
+    <us>ESQ </us>
+    <be>ESQ </be>
+  </valeur>
+
+
+  <valeur name="defense">
+    <fr>DEF </fr>
+    <en>DEF </en>
+    <us>DEF </us>
+    <be>DEF </be>
+  </valeur>
+
+  <valeur name="type_text">
+    <fr>TYP </fr>
+    <en>TYP </en>
+    <us>TYP </us>
+    <be>TYP </be>
+  </valeur>
+
+
+
+  <valeur name="sub_titre_fiche_perso">
     <fr>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada, tortor id luctus fringilla, nisi arcu aliquam ligula, eget porta orci lacus nec justo. </fr>
     <en>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada, tortor id luctus fringilla, nisi arcu aliquam ligula, eget porta orci lacus nec justo. </en>
     <us>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada, tortor id luctus fringilla, nisi arcu aliquam ligula, eget porta orci lacus nec justo. </us>
     <be>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada, tortor id luctus fringilla, nisi arcu aliquam ligula, eget porta orci lacus nec justo. </be>
   </valeur>
-  
+
   <valeur name="explain">
     <fr>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit ultricies lorem vel porttitor. Sed rutrum vehicula accumsan. Vestibulum in est non lectus vulputate eleifend. Aenean viverra feugiat lorem, nec suscipit nulla interdum ac. Donec ullamcorper tortor eu dolor condimentum cursus. Nulla vitae urna dolor. Nam ullamcorper quam ac sapien imperdiet, nec blandit metus volutpat. Donec viverra semper erat eu tempus. Vestibulum lobortis pharetra libero sit amet mattis. Quisque sed condimentum orci, vitae scelerisque est. Etiam sed sodales neque. Aliquam metus ipsum, porttitor a pulvinar id, gravida sit amet felis. Praesent vitae consectetur ex. Duis lacus ante, ullamcorper ut dui id, malesuada aliquam nulla. </fr>
     <en>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit ultricies lorem vel porttitor. Sed rutrum vehicula accumsan. Vestibulum in est non lectus vulputate eleifend. Aenean viverra feugiat lorem, nec suscipit nulla interdum ac. Donec ullamcorper tortor eu dolor condimentum cursus. Nulla vitae urna dolor. Nam ullamcorper quam ac sapien imperdiet, nec blandit metus volutpat. Donec viverra semper erat eu tempus. Vestibulum lobortis pharetra libero sit amet mattis. Quisque sed condimentum orci, vitae scelerisque est. Etiam sed sodales neque. Aliquam metus ipsum, porttitor a pulvinar id, gravida sit amet felis. Praesent vitae consectetur ex. Duis lacus ante, ullamcorper ut dui id, malesuada aliquam nulla. </en>
     <us>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit ultricies lorem vel porttitor. Sed rutrum vehicula accumsan. Vestibulum in est non lectus vulputate eleifend. Aenean viverra feugiat lorem, nec suscipit nulla interdum ac. Donec ullamcorper tortor eu dolor condimentum cursus. Nulla vitae urna dolor. Nam ullamcorper quam ac sapien imperdiet, nec blandit metus volutpat. Donec viverra semper erat eu tempus. Vestibulum lobortis pharetra libero sit amet mattis. Quisque sed condimentum orci, vitae scelerisque est. Etiam sed sodales neque. Aliquam metus ipsum, porttitor a pulvinar id, gravida sit amet felis. Praesent vitae consectetur ex. Duis lacus ante, ullamcorper ut dui id, malesuada aliquam nulla. </us>
     <be>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec blandit ultricies lorem vel porttitor. Sed rutrum vehicula accumsan. Vestibulum in est non lectus vulputate eleifend. Aenean viverra feugiat lorem, nec suscipit nulla interdum ac. Donec ullamcorper tortor eu dolor condimentum cursus. Nulla vitae urna dolor. Nam ullamcorper quam ac sapien imperdiet, nec blandit metus volutpat. Donec viverra semper erat eu tempus. Vestibulum lobortis pharetra libero sit amet mattis. Quisque sed condimentum orci, vitae scelerisque est. Etiam sed sodales neque. Aliquam metus ipsum, porttitor a pulvinar id, gravida sit amet felis. Praesent vitae consectetur ex. Duis lacus ante, ullamcorper ut dui id, malesuada aliquam nulla. </be>
   </valeur>
-  
+
 
 
 </document>

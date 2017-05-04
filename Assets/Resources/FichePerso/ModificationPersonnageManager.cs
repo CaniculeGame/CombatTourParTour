@@ -19,6 +19,7 @@ public class ModificationPersonnageManager : MonoBehaviour
     public ScrollList shop;
     public GameObject personnageA;
     public GameObject personnageB;
+    public GameObject panelAttributPerso;
 
 
     public void Eteindre()
@@ -64,6 +65,31 @@ public class ModificationPersonnageManager : MonoBehaviour
         LoadAttaqueButton("FichePerso/Text/attaqueList");
 
         //afficher les attribut du personnage
+        GameObject[] txtAttribut = new GameObject[panelAttributPerso.transform.childCount];
+        for (int i = 0; i < panelAttributPerso.transform.childCount; i++)
+        {
+            if (panelAttributPerso.transform.GetChild(i).name == "NomText")
+                panelAttributPerso.transform.GetChild(i).GetComponent<Text>().text = personnageA.GetComponent<Personnage>().Nom;
+            else if (panelAttributPerso.transform.GetChild(i).name == "PartieText")
+                panelAttributPerso.transform.GetChild(i).GetComponent<Text>().text = personnageA.GetComponent<Personnage>().Partie;
+            else if (panelAttributPerso.transform.GetChild(i).name == "PvText")
+                panelAttributPerso.transform.GetChild(i).GetComponent<Text>().text = DictionnaireLang.Lang.Text("pv") + (personnageA.GetComponent<Personnage>().PvBase * 100).ToString();
+            else if (panelAttributPerso.transform.GetChild(i).name == "MpText")
+                panelAttributPerso.transform.GetChild(i).GetComponent<Text>().text = DictionnaireLang.Lang.Text("mp") + (personnageA.GetComponent<Personnage>().ManaBase * 100).ToString();
+            else if (panelAttributPerso.transform.GetChild(i).name == "ForceText")
+                panelAttributPerso.transform.GetChild(i).GetComponent<Text>().text = DictionnaireLang.Lang.Text("force") + (personnageA.GetComponent<Personnage>().ForceBase * 100).ToString();
+            else if (panelAttributPerso.transform.GetChild(i).name == "EsquiveText")
+                panelAttributPerso.transform.GetChild(i).GetComponent<Text>().text = DictionnaireLang.Lang.Text("esquive") + (personnageA.GetComponent<Personnage>().EsquiveBase * 100).ToString();
+            else if (panelAttributPerso.transform.GetChild(i).name == "VitText")
+                panelAttributPerso.transform.GetChild(i).GetComponent<Text>().text = DictionnaireLang.Lang.Text("vitesse") + (personnageA.GetComponent<Personnage>().VitesseBase * 100).ToString();
+            else if (panelAttributPerso.transform.GetChild(i).name == "PrecisionText")
+                panelAttributPerso.transform.GetChild(i).GetComponent<Text>().text = DictionnaireLang.Lang.Text("precision") + (personnageA.GetComponent<Personnage>().PrecisionBase * 100).ToString();
+            else if (panelAttributPerso.transform.GetChild(i).name == "DefenseText")
+                panelAttributPerso.transform.GetChild(i).GetComponent<Text>().text = DictionnaireLang.Lang.Text("defense") + (personnageA.GetComponent<Personnage>().DefBase * 100).ToString();
+            else if (panelAttributPerso.transform.GetChild(i).name == "TypeText")
+                panelAttributPerso.transform.GetChild(i).GetComponent<Text>().text = DictionnaireLang.Lang.Text("type_text") + personnageA.GetComponent<Personnage>().TypeString;
+        }
+
 
         //demarrer le programme
         Demarrer();
@@ -72,7 +98,7 @@ public class ModificationPersonnageManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-      //  Configurer();
+        //  Configurer();
     }
 
 

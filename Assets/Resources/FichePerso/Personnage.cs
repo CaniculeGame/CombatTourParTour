@@ -2,29 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Personnage
+public class Personnage : MonoBehaviour
 {
 
+    public string nom_;
+    public string partiePolitique_;
 
     private List<Attaque> ListeDAttaque_ = null;
 
-    private Type type_ = null;
+    private Type type_;
     private float pv_ = 0.0f;
-    private float pvDefaut_ = 0.0f;
+    public float pvDefaut_ = 0.0f;
     private float def_ = 0.0f;
-    private float defDefaut_ = 0.0f;
+    public float defDefaut_ = 0.0f;
     private float mana_ = 0.0f;
-    private float manaDefaut_ = 0.0f;
+    public float manaDefaut_ = 0.0f;
     private float vitesse_ = 0.0f;
-    private float vitesseDefaut_ = 0.0f;
+    public float vitesseDefaut_ = 0.0f;
     private float esquive_ = 0.0f;
-    private float esquiveDefaut_ = 0.0f;
+    public float esquiveDefaut_ = 0.0f;
     private float precision_ = 0.0f;
-    private float precisionDefaut_ = 0.0f;
+    public float precisionDefaut_ = 0.0f;
     private float force_ = 0.0f;
-    private float forceDefaut_ = 0.0f;
+    public float forceDefaut_ = 0.0f;
 
-    public Personnage(float pv, float def, float force,float mana, float vitesse, float esquive, float precision, Type type, List<Attaque> attaques)
+
+    public void InitPersonnage()
+    {
+        pv_ = pvDefaut_;
+        def_ = defDefaut_;
+        mana_ = manaDefaut_;
+        vitesse_ = vitesseDefaut_;
+        esquive_ = esquiveDefaut_;
+        precision_ = precisionDefaut_;
+        force_ = forceDefaut_;
+    }
+
+    public void MofifierPersonnage(float pv, float def, float force, float mana, float vitesse, float esquive, float precision, Type type, List<Attaque> attaques)
     {
 
         ListeDAttaque_ = attaques;
@@ -71,6 +85,8 @@ public class Personnage
 
     }
 
+    public string Nom { get { return nom_; } set { nom_ = value; } }
+    public string Partie { get { return partiePolitique_; } set { partiePolitique_ = value; } }
 
     public float Pv { get { return pv_; } set { pv_ = value; } }
     public float Def { get { return def_; } set { def_ = value; } }
@@ -88,7 +104,45 @@ public class Personnage
     public float PrecisionBase { get { return precisionDefaut_; } set { precisionDefaut_ = value; } }
     public float ForceBase { get { return forceDefaut_; } set { forceDefaut_ = value; } }
 
-    public Type Type { get { return type_; } set { type_ = value; } }
+    public Type Type { get { return type_; } set { Debug.Log("test");type_ = value; } }
+
+    public void SetType(Type tp)
+    {
+        this.type_ = tp;
+    }
+
+    public string TypeString
+    {
+        get
+        {
+            string val="ERROR";
+
+            if (type_ != null)
+            {
+                switch (type_.Genre)
+                {
+                    case Type.E_TypeEnum.EAU:
+                        val = "EAU";
+                        break;
+
+                    case Type.E_TypeEnum.FEU:
+                        val = "FEU";
+                        break;
+
+                    case Type.E_TypeEnum.NORMAL:
+                        val = "NORMAL";
+                        break;
+
+                    case Type.E_TypeEnum.PLANTE:
+                        val = "PLANTE";
+                        break;
+                }
+            }
+
+            return val;
+        } 
+    }
+
     public List<Attaque> AttaquesList { get { return ListeDAttaque_; } set { ListeDAttaque_ = value; } }
 
 }

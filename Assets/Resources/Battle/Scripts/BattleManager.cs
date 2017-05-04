@@ -228,7 +228,7 @@ public class BattleManager : MonoBehaviour
         if (Joueur.AttaquesList.Count > 2)
         {
             Att2.gameObject.SetActive(true);
-            SetText(Joueur.AttaquesList[2].Intitule, E_TextEnum.ATT2);
+            SetText(Joueur.AttaquesList[2].Intitule + "  " + (Joueur.AttaquesList[2].Mp * 100.0f).ToString("0"), E_TextEnum.ATT2);
         }
         else
         {

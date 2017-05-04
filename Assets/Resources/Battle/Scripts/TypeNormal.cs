@@ -13,6 +13,7 @@ public class TypeNormal : Type
         this.Tableau[(int)E_TypeEnum.NORMAL] = 1.0f;
         this.Tableau[(int)E_TypeEnum.PLANTE] = 1.0f;
 
+        this.Genre = E_TypeEnum.NORMAL;
     }
 
 
